@@ -1,0 +1,511 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	
+	<!-- Ion Icon CSS -->
+	<link rel="stylesheet" href="css/ionicons.min.css">
+
+	<!-- for animations-->
+	<link rel="stylesheet" href="css/animate.css">
+	
+	<!-- Font -->
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+	
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	
+	<!-- Jquery-->
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+	
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<style>
+		body{font-family:Roboto, sans-serif;font-size:18px;font-style:normal;padding-top:70px}
+		.size-20{font-size: 20px;}
+		.exp-header{font-family:Arial, sans-serif;font-style:bold;font-size:20px;font-weight:300}
+		.title-header{font-family:Arial, sans-serif;font-style:bold;font-size:18px;padding-bottom:4px;font-weight:300}
+		.exp-content{font-size:16px;}
+		.experience{padding-top:20px;}
+		
+
+		#hero{background: linear-gradient( rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7) ), url('img/hero.jpg');margin-top:-70px; min-height:100vh}
+		.hero-words{margin-top:20%; color:#aeaeae;letter-spacing:1.5px; padding-bottom:15px;}
+		.hero-words h1{font-size:3em;font-family:roboto;}
+		#section1{background-color:#4e4f5c;padding-bottom:85px;padding-top:20px}
+		#section1 h2{color:#aeaeae;}
+		#section1 p{color:#aeaeae;}
+		#section2{background-color:#adacb5;padding-bottom:85px;padding-top:20px}
+		#section2 h2{color:black}
+		#section3{background-color:#5b5758;padding-bottom:85px;padding-top:20px;color:#aeaeae;}
+		#section4{background-color:#adacb5;padding-bottom:85px;padding-top:20px}
+		#section4 h2{color:black}
+		#section5{background-color:#c6dbf0;padding-bottom:85px;padding-top:20px}
+		
+		#about{margin-top:-70px;display:block;}
+		footer{background-color:#fff;padding-bottom:100px}
+		a{color:inherit;}
+		a:hover{text-decoration:none;color:white}
+		.anchor{ display: block;position: relative;top: -50px;visibility: hidden;}
+		.progress{ border-radius: 0px; }
+		.progress-bar-success{background: -webkit-linear-gradient(top, rgba(70, 235, 117, 1) 0%, rgba(65, 201, 65, 1) 100%); background: linear-gradient(to bottom, rgba(70, 235, 117, 1) 0%, rgba(65, 201, 65, 1) 100%);}
+		.navbar-collapse.collapse {display: block!important;}
+		.navbar-nav>li, .navbar-nav {float: left !important;}
+		.navbar-nav.navbar-right:last-child {margin-right: -15px !important;}
+		.navbar-right {float: right!important;}
+		
+		input{width:100%;margin-bottom:25px}
+		textarea{width:100%;height: 250px;}
+		button{margin-top:25px}
+		
+		span.text-content {
+		  background: rgba(0,0,0,0.7);
+		  color: #FFF;
+		  cursor: pointer;
+		  display: table;
+		  left: 0;
+		  top: 0;
+		  position: absolute;
+
+		  width: 100%;
+
+		  opacity: 0;
+		  -webkit-transition: opacity 500ms;
+		  -moz-transition: opacity 500ms;
+		  -o-transition: opacity 500ms;
+		  transition: opacity 500ms;
+		}
+		
+		span.text-content span {
+		  display: table-cell;
+		  text-align: center;
+		  vertical-align: middle;
+		}
+		
+		div.portfolioList:hover span.text-content {
+		  opacity: 1;
+		}
+		
+		.portfolioImage{
+			width: 100%;
+		}
+	</style>
+	
+	<script>
+$(document).ready(function(){
+	$('a[href*="#"]:not([href="#"])').click(function() {
+	  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+		var target = $(this.hash);
+		target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+		if (target.length) {
+		  $('html, body').animate({
+			scrollTop: target.offset().top
+		  }, 1000);
+		  return false;
+		}
+	  }
+	});
+	
+	$(window).resize(function() {
+		$("span.text-content").css("height", $(".portfolioImage").height());
+	});
+	
+	$(window).resize();
+	
+});
+
+var $window = $(window);
+
+    function isScrolledIntoView(elem, $window) {
+        var windowTop = $window.scrollTop();
+        var windowBottom = windowTop + $window.height() ;
+
+        var elemTop = $(elem).offset().top;
+        var elemBottom = elemTop + $(elem).height();
+
+		return (elemTop <= windowBottom);
+        
+    }
+
+
+$(document).on("scroll", function () {
+    if (isScrolledIntoView(".animation", $window)) {
+        $(".animation").addClass("animated");
+		$(".animation").addClass("fadeInUp");
+    }
+	
+	if (isScrolledIntoView(".animation2", $window)) {
+        $(".animation2").addClass("animated");
+		$(".animation2").addClass("fadeInUp");
+    }
+	
+	if (isScrolledIntoView(".animation3", $window)) {
+        $(".animation3").addClass("animated");
+		$(".animation3").addClass("fadeInUp");
+    }
+	
+	if (isScrolledIntoView(".animation4", $window)) {
+        $(".animation4").addClass("animated");
+		$(".animation4").addClass("fadeInUp");
+    }
+	
+	if (isScrolledIntoView(".animation5", $window)) {
+        $(".animation5").addClass("animated");
+		$(".animation5").addClass("fadeInUp");
+    }
+});
+
+
+</script>
+</head>	
+<body>
+	<header>
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+					<div class="navbar-header">
+						<ul class="nav navbar-nav ">
+							<li><a href="#about">
+								<span class="size-20">
+									<i class="icon ion-person"></i>
+									<span class="hidden-sm hidden-xs">About</span>
+								</span>
+							</a></li>
+							<li><a href="#experience">
+								<span class="size-20">
+									<i class="icon ion-briefcase"></i>
+									<span class="hidden-sm hidden-xs">Experience</span>
+								</span>
+							</a></li>
+							<li><a href="#education">
+								<span class="size-20">
+									<i class="icon ion-university"></i>
+									<span class="hidden-sm hidden-xs">Education</span>
+								</span>
+							</a></li>
+							<li><a href="#skills">
+								<span class="size-20">
+									<i class="icon ion-code"></i>
+									<span class="hidden-sm hidden-xs">Skills</span>
+								</span>
+							</a></li>
+							<li><a href="#projects">
+								<span class="size-20">
+									<i class="icon ion-folder"></i>
+									<span class="hidden-sm hidden-xs">Projects</span>
+								</span>
+							</a></li>
+							<li><a href="#contact">
+								<span class="size-20">
+									<i class="icon ion-email"></i>
+									<span class="hidden-sm hidden-xs">Contact</span>
+								</span>
+							</a></li>
+						</ul>
+					</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+	</header>
+<a id="about" class="anchor"></a>
+<section id="hero">
+<div class="container">
+	
+	<div class="row animated fadeInLeft">
+		<div class="col-sm-8 col-xs-12 text-justify hero-words">
+			<h1>Who Am I?</h1>
+			<h3><strong>My name is Isaac Goh</strong></h3>
+			<h3>I'm a software developer offering a wide range of creative solutions to business problems. I love technology and am excited to learn something new everyday.</h3>
+			<h3>My main passion is web development and design though I am also excited to do mobile and business applications.</h3>
+			<a href="#contact" class="btn btn-success">Contact Me</a>
+		</div>
+	</div>
+
+</div>
+</section>
+<a id="experience" class="anchor"></a>
+<section id="section1">
+<div class="container animation">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">WORK EXPERIENCE</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row experience">
+		<div class="col-md-4 text-left">
+			<a href="http://www.pcs.com.my"><p class="exp-header">Professional Computer Systems</p></a>
+			<p class="exp-content">Mar 2017 - Current</p>
+		</div>
+		<div class="col-md-8 text-left">
+			<p class="title-header">Application Software Developer</p>
+			<p class="exp-content">Worked in a team to develop applications for IBM Domino using LotusScript, JavaScript and XPages.</p>
+			<p class="exp-content">Developed prototype mobile application using PhoneGap/Cordova, JavaScript, ASP.NET, C# and SQLServer.</p>
+		</div>
+	</div>
+	<div class="row experience">
+		<div class="col-md-4 text-left">
+			<a href="http://www.swinburne.edu.my"><p class="exp-header">Swinburne University of Technology</p></a>
+			<p class="exp-content">Mar 2017 - Current</p>
+		</div>
+		<div class="col-md-8 text-left">
+			<p class="title-header">Part Time Academic Staff</p>
+			<p class="exp-content">Taught Interface Design and Development in labs and assisted students with their work outside of lab hours. Graded lab tasks and student assignments.</p>
+		</div>
+	</div>
+	<div class="row experience">
+		<div class="col-md-4 text-left">
+			<p class="exp-header">Swinburne University of Technology</p>
+			<p class="exp-content">Jul 2014 - Jul 2016</p>
+		</div>
+		<div class="col-md-8 text-left">
+			<p class="title-header">Research Assistant</p>
+			<p class="exp-content">Assisted supervisor in various tasks, conducted literature reviews, conducted data analysis and wrote coding to run simulation of data and wrote and presented papers for conferences and journals. </p>
+		</div>
+	</div>
+</div>
+</section>
+<a id="education" class="anchor"></a>
+<section id="section2">
+<div class="container animation2">
+	
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">EDUCATION</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row experience">
+		<div class="col-md-4 text-left">
+			<p class="exp-header">Swinburne University of Technology</p>
+			<p class="exp-content">Aug 2014 - Jan 2017</p>
+		</div>
+		<div class="col-md-8 text-left">
+			<p class="title-header">Master of Science (Research)</p>
+			<p class="exp-content">Developed a model to analyze the price movement of crude palm oil in the Malaysian market based on historical price distribution.</p>
+		</div>
+	</div>
+	<div class="row experience">
+		<div class="col-md-4 text-left">
+			<p class="exp-header">MSTB/ISTQB</p>
+			<p class="exp-content">Dec 2013</p>
+		</div>
+		<div class="col-md-8 text-left">
+			<p class="title-header">Certified Tester Foundation Level</p>
+			<p class="exp-content">Certified in the principles of testing following the standards of the International Software Testing Qualifications Board.</p>
+		</div>
+	</div>
+	<div class="row experience">
+		<div class="col-md-4 text-left">
+			<p class="exp-header">Swinburne University of Technology</p>
+			<p class="exp-content">Feb 2011 - Dec 2013</p>
+		</div>
+		<div class="col-md-8 text-left">
+			<p class="title-header">Bachelor of Information and Communication Technology</p>
+			<p class="exp-content">Majored in Software Development with a Design minor. Focused on web and mobile solutions. Developed an Android app for my Final Year Project.</p>
+		</div>
+	</div>
+</div>
+</section>
+<a id="skills" class="anchor"></a>
+<section id="section3">
+<div class="container animation3">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">SKILLS</h2>
+			<hr>
+			<h3 class="text-center">Coding Skills</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4"><span>CSS</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:100%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>HTML</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:100%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>JavaScript</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:80%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>PHP</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:70%"></div></div></div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4"><span>AngularJS</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:80%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>Bootstrap</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:70%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>Java</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:60%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>MySQL</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:80%"></div></div></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h3 class="text-center">Tools</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4"><span>MS Office</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:100%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>Adobe Photoshop</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:85%"></div></div></div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4"><span>Notepad++</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:100%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>Adobe Brackets</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:70%"></div></div></div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h3 class="text-center">Languages</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4"><span>English</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:90%"></div></div></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-4"><span>Mandarin</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:80%"></div></div></div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-4"><span>Malay</span></div>
+				<div class="col-sm-7"><div class="progress"><div class="progress-bar progress-bar-success" style="width:60%"></div></div></div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<a id="projects" class="anchor"></a>
+<section id="section4">
+<div class="container animation4">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">PROJECTS</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 portfolioList">
+			 <a href="#">
+				  <img src="img/test.jpg" class="portfolioImage"/>
+				  <span class="text-content"><span>Bootstrap, AngularJS</span></span>  
+			</a>
+			<p class="text-center">Test, a Fashion Company</p>
+		</div>
+		<div class="col-sm-6 portfolioList">
+			 <a href="#">
+				  <img src="img/test.jpg" class="portfolioImage"/>
+				  <span class="text-content"><span>Materialize, ReactJS</span></span>
+			</a>
+			<p class="text-center">Test, a Fashion Company</p>
+		</div>
+		
+	</div>
+</div>
+</section>
+<a id="contact" class="anchor"></a>
+<section id="section5">
+<div class="container animation5">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">CONTACT</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 text-center">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<input type="text" placeholder="Name"/>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<input type="text"  placeholder="Email"/>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<input type="text"  placeholder="Subject"/>
+				</div>
+				<div class="col-sm-2"/></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8">
+					<textarea placeholder="Message"></textarea>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-2"/></div>
+				<div class="col-sm-8 text-right">
+					<button class="btn btn-success" type="button">SUBMIT</button>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<footer>
+	<div class="container-fluid">
+	
+		<div class="row">
+			<div class="col-sm-3 text-center"></div>
+			<div class="col-sm-6 text-center">
+			<hr>
+				<i>Your time is limited, so don't waste it living someone else's life. Don't be trapped by dogma - which is living with the results of other people's thinking. Don't let the noise of others' opinions drown out your own inner voice. And most important, have the courage to follow your heart and intuition. They somehow already know what you truly want to become. Everything else is secondary.</i>
+				<p>- Steve Jobs 2005</p>
+			<hr>
+			</div>
+		</div>
+		
+	</div>
+</footer>
+</body>
+</html>
