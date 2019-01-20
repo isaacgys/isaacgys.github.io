@@ -1,0 +1,281 @@
+<!doctype html>
+<html>
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+	<meta content="utf-8" http-equiv="encoding">
+	<meta name="description" content="Isaac Goh is a Kuching-based web developer and freelance writer">
+	<link rel="canonical" href="http://isaacgys.github.io"/>
+	
+	<title>Isaac Goh</title>
+	
+	<link rel="icon" type="image/png" href="img/favicon.png">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto">
+	<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	
+	<script>
+	$(document).ready(function(){
+		$('a[href*="#"]:not([href="#"])').click(function() {
+		  if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+			var target = $(this.hash);
+			target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+			if (target.length) {
+			  $('html, body').animate({
+				scrollTop: target.offset().top
+			  }, 1000);
+			  return false;
+			}
+		  }
+		});
+		
+		$(window).resize(function() {
+			$("span.text-content").css("height", $(".portfolioImage").height());
+		});
+		
+		$(window).resize();
+		
+	});
+
+	var $window = $(window);
+
+		function isScrolledIntoView(elem, $window) {
+			var windowTop = $window.scrollTop();
+			var windowBottom = windowTop + $window.height() ;
+
+			var elemTop = $(elem).offset().top;
+			var elemBottom = elemTop + $(elem).height();
+
+			return (elemTop <= windowBottom);
+			
+		}
+
+
+	$(document).on("scroll", function () {
+		if (isScrolledIntoView(".animation", $window)) {
+			$(".animation").addClass("animated");
+			$(".animation").addClass("fadeInUp");
+		}
+	});
+
+
+	</script>
+</head>	
+<body>
+	<header>
+		<!--<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-12 col-sm-6 col-sm-offset-3 col-md-8 col-md-offset-2">
+					<div class="navbar-header">
+						<ul class="nav navbar-nav ">
+							<li><a href="#about">
+								<span class="size-20">
+									<i class="icon ion-person"></i>
+									<span class="hidden-sm hidden-xs">About</span>
+								</span>
+							</a></li>
+							<li><a href="#experience">
+								<span class="size-20">
+									<i class="icon ion-briefcase"></i>
+									<span class="hidden-sm hidden-xs">Experience</span>
+								</span>
+							</a></li>
+							<li><a href="#education">
+								<span class="size-20">
+									<i class="icon ion-university"></i>
+									<span class="hidden-sm hidden-xs">Education</span>
+								</span>
+							</a></li>
+							<li><a href="#skills">
+								<span class="size-20">
+									<i class="icon ion-code"></i>
+									<span class="hidden-sm hidden-xs">Skills</span>
+								</span>
+							</a></li>
+							<li><a href="#projects">
+								<span class="size-20">
+									<i class="icon ion-folder"></i>
+									<span class="hidden-sm hidden-xs">Projects</span>
+								</span>
+							</a></li>
+							<li><a href="#contact">
+								<span class="size-20">
+									<i class="icon ion-email"></i>
+									<span class="hidden-sm hidden-xs">Contact</span>
+								</span>
+							</a></li>
+						</ul>
+					</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+		-->
+	</header>
+<a id="about" class="anchor"></a>
+<section id="hero">
+<div class="container">
+	<div class="row animated fadeInDown ">
+		<div class="col-xs-12 text-right stickyResume">
+			<a class="resume_link" href="isaac_goh_resume.pdf"><p>RESUME</p></a>
+		</div>
+	</div>
+	<div class="row animated fadeInLeft">
+		<div class="col-sm-8 col-xs-12 hero-words">
+			<h1>Who Am I?</h1>
+			<h3><strong>My name is <span class="namehighlight">Isaac Goh</span>.</strong></h3>
+			<h3>I'm a software developer offering a wide range of creative solutions to business problems. I love technology and am excited to learn something new everyday.</h3>
+			<h3>My main passion is web development and design though I am also excited to do mobile and business applications.</h3>
+			<a href="#contact" class="btn btn-success">CONTACT ME</a>
+		</div>
+	</div>
+
+</div>
+</section>
+
+<section id="section1">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-12 text-justify">
+					<h2 class="text-center">EXPERIENCE</h2>
+				</div>
+			</div>
+			<div class="row experience">
+				<div class="col-md-12">
+					<p class="exp-date">2017 - Present</p>
+					<p class="exp-header">Professional Computer Systems / <span class="title-header">Application Software Developer</span></p>
+					<p class="exp-content">Worked in a team to develop applications for IBM Domino using LotusScript, JavaScript and XPages.</p>
+					<p class="exp-content">Developed web and mobile applications using PhoneGap/Cordova, JavaScript, ASP.NET, C# and SQLServer.</p>
+				</div>
+			</div>
+			<div class="row experience">
+				<div class="col-md-12">
+					<p class="exp-date">2017 - 2018</p>
+					<p class="exp-header">Swinburne University of Technology / <span class="title-header">Part Time Academic Staff</span></p>
+					<p class="exp-content">Taught Angular.JS and Bootstrap in labs and assisted students with their work outside of lab hours. Graded lab tasks and student assignments.</p>
+				</div>
+				<div class="col-md-8 text-left">
+					
+				</div>
+			</div>
+			<div class="row experience">
+				<div class="col-md-12">
+					<p class="exp-date">2014 - 2016</p>
+					<p class="exp-header">Swinburne University of Technology / <span class="title-header">Research Assistant</span></p>
+					<p class="exp-content">Assisted supervisor in various tasks, conducted literature reviews, conducted data analysis and wrote coding to run simulation of data and wrote and presented papers for conferences and journals. </p>
+				</div>
+			</div>
+		</div>
+		<div class="col-sm-6">
+			<div class="row">
+				<div class="col-sm-12 text-justify">
+					<h2 class="text-center">EDUCATION</h2>
+				</div>
+			</div>
+			<div class="row experience">
+				<div class="col-md-12">
+					<p class="exp-date">Aug 2014 - Jan 2017</p>
+					<p class="exp-header">Swinburne University of Technology / <span class="title-header">Master of Science (Research)</span></p>
+					<p class="exp-content">Developed a model to analyze the price movement of crude palm oil in the Malaysian market based on historical price distribution.</p>
+				</div>
+			</div>
+			<div class="row experience">
+				<div class="col-md-12">
+					<p class="exp-date">Dec 2013</p>
+					<p class="exp-header">MSTB/ISTQB / <span class="title-header">Certified Tester Foundation Level</span></p>
+					<p class="exp-content">Certified in the principles of testing following the standards of the International Software Testing Qualifications Board.</p>
+				</div>
+			</div>
+			<div class="row experience">
+				<div class="col-md-12">
+					<p class="exp-date">Feb 2011 - Dec 2013</p>
+					<p class="exp-header">Swinburne University of Technology / <span class="title-header">Bachelor of Information and Communication Technology</span></p>
+					<p class="exp-content">Majored in Software Development with a Design minor. Focused on web and mobile solutions. Developed an Android app for my Final Year Project.</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div>
+</section>
+
+
+<section id="section3">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">SKILLS</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-12"><h3 class="text-center">Coding</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center"><span>CSS</span></div>
+				<div class="col-sm-12 text-center"><span>JavaScript</span></div>
+				<div class="col-sm-12 text-center"><span>HTML</span></div>
+				<div class="col-sm-12 text-center"><span>PHP</span></div>
+				<div class="col-sm-12 text-center"><span>MySQL</span></div>
+				<div class="col-sm-12 text-center"><span>VB.NET</span></div>
+				<div class="col-sm-12 text-center"><span>SQLServer</span></div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-12"><h3 class="text-center">Tools</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center"><span>Photoshop</span></div>
+				<div class="col-sm-12 text-center"><span>Illustrator</span></div>
+			</div>
+		</div>
+		<div class="col-sm-4">
+			<div class="row">
+				<div class="col-sm-12"><h3 class="text-center">Languages</h3></div>
+			</div>
+			<div class="row">
+				<div class="col-sm-12 text-center"><span>English</span></div>
+				<div class="col-sm-12 text-center"><span>Chinese</span></div>
+				<div class="col-sm-12 text-center"><span>Malay</span></div>
+			</div>
+		</div>
+	</div>
+</div>
+</section>
+<section id="section4">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<h2 class="text-center">SAMPLE WORK</h2>
+			<hr>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-12 portfolioList">
+			<p class="text-center">Coming Soon</p>
+		</div>
+		
+	</div>
+</div>
+</section>
+
+<footer id="section5">
+<div class="container">
+	<div class="row">
+		<div class="col-sm-12 text-justify">
+			<p class="text-center">contact me @ <a href="mailto:isaacgoh.freelance@gmail.com" class="emaillink">isaacgoh.freelance@gmail.com</a></p>
+		</div>
+	</div>
+</div>
+</footer>
+</body>
+</html>
