@@ -1,29 +1,22 @@
-// function showText(id){
-	// switch(id) {
-	  // case 1:
-		// document.getElementById('menu1text').style.visibility="visible";
-		// break;
-	  // case 2:
-		// document.getElementById('menu2text').style.visibility="visible";
-		// break;
-	  // case 3:
-		// document.getElementById('menu3text').style.visibility="visible";
-		// break;
-	// } 
-	
-// }
+function hasTouch() {
+    return 'ontouchstart' in document.documentElement
+           || navigator.maxTouchPoints > 0
+           || navigator.msMaxTouchPoints > 0;
+}
 
-// function hideText(id){
-	// switch(id) {
-	  // case 1:
-		// document.getElementById('menu1text').style.visibility="hidden";
-		// break;
-	  // case 2:
-		// document.getElementById('menu2text').style.visibility="hidden";
-		// break;
-	  // case 3:
-		// document.getElementById('menu3text').style.visibility="hidden";
-		// break;
-	// } 
-	
-// }
+if (hasTouch()) { // remove all :hover stylesheets
+    try { // prevent exception on browsers not supporting DOM styleSheets properly
+        for (var si in document.styleSheets) {
+            var styleSheet = document.styleSheets[si];
+            if (!styleSheet.rules) continue;
+
+            for (var ri = styleSheet.rules.length - 1; ri >= 0; ri--) {
+                if (!styleSheet.rules[ri].selectorText) continue;
+
+                if (styleSheet.rules[ri].selectorText.match(':hover')) {
+                    styleSheet.deleteRule(ri);
+                }
+            }
+        }
+    } catch (ex) {}
+}
