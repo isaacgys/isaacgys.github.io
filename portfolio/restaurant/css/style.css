@@ -84,12 +84,21 @@ body{
 
 
 .hero{
-	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/hero.jpg');
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/restaurant.jpg');
 	min-height:60vh;
 	background-attachment: fixed;
-	background-position: center;
+	background-position: bottom;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.menuhero{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/menu.jpg');
+	min-height:60vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
 }
 
 .hero-words{
@@ -185,11 +194,11 @@ body{
 }
 
 .testimonials h2{
-    	font-family: 'Bilbo Swash Caps', cursive;
+    font-family: 'Bilbo Swash Caps', cursive;
 	font-weight:900;
 	letter-spacing:5px;
 	font-size:3em;
-	margin-top:130px;
+	margin-top:100px;
 }
 
 .testimonies{
@@ -204,15 +213,84 @@ body{
 	margin-top:5vh;
 }
 
+.foodmenu h2{
+    font-family: 'Bilbo Swash Caps', cursive;
+	font-size:3.2em;
+}
+
+.foodmenu h2:after{
+    content:"";
+    display: block;
+    vertical-align: bottom;
+    width: 60%;
+	margin-left:20%;
+	margin-top:5px;
+    border-top: 2px solid #ffd700;
+}
+
+.itemname{
+	font-family:'Alegreya Sans SC', sans-serif;
+	font-size:1.7em;
+	font-weight:900;
+	margin-bottom:3px;
+	padding-top:15px;
+}
+
+.itemdesc{
+	font-family:'Roboto', sans-serif;
+	font-size:1.1em;
+	margin-bottom:3px;
+}
+
+.price{
+	font-family:'Alegreya Sans SC', sans-serif;
+	font-weight:900;
+	font-size:1.2em;
+}
+
+
+.reservationhero{
+	background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url('../img/table.jpg');
+	min-height:60vh;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	background-attachment: fixed;
+}
+
 footer{
+	border-top:1px solid #ffd700;
 	height:10vh;
 	padding-top:25px;
 	font-family:"Roboto",sans-serif;
 }
 
+input{
+	font-size:2em;
+	border-radius:0px;
+	font-family:"Roboto",sans-serif;
+	border:2px solid #ffd700;
+	margin-top:15px;
+	padding:5px;
+}
 
+.reservation{
+	min-height:50vh;
+	padding-top:50px;
+}
 
+.btn-custom{
+	background-color: #191919;
+	color: #ffd700;
+	border-radius:0px;
+	padding:15px 25px 15px 25px;
+	margin-top:50px;
+}
 
+.btn-custom:hover{
+	background-color: #ffd700;
+	color: #191919;
+}
 
 
 
